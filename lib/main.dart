@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:smart_invoice/config/localization.dart';
 import 'package:smart_invoice/config/themes.dart';
+import 'package:smart_invoice/data/models/product/product_model.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  Hive.registerAdapter(ProductModelAdapter());
   runApp(const MainApp());
 }
 
