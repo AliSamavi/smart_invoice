@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_invoice/config/localization.dart';
 import 'package:smart_invoice/config/themes.dart';
 
 void main() {
@@ -13,6 +14,8 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: Themes.main,
+      supportedLocales: Localization.locales,
+      localizationsDelegates: Localization.delegates,
       home: const Scaffold(
         body: Center(
           child: Text("سلام جهان!"),
