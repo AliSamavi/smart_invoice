@@ -7,5 +7,5 @@ class Localization {
     GlobalWidgetsLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
   ];
-  static const locales = [Locale("fa", "IR")];
+  static const locale = Locale("fa", "IR");
 }

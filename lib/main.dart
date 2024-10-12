@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart' show GetMaterialApp;
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:smart_invoice/config/localization.dart';
+import 'package:smart_invoice/config/routes.dart';
 import 'package:smart_invoice/config/themes.dart';
 import 'package:smart_invoice/data/models/product/product_model.dart';
 
@@ -15,16 +17,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: Themes.main,
-      supportedLocales: Localization.locales,
+      locale: Localization.locale,
       localizationsDelegates: Localization.delegates,
-      home: const Scaffold(
-        body: Center(
-          child: Text("سلام جهان!"),
-        ),
-      ),
+      getPages: Routes.pages,
+      initialRoute: Routes.main,
     );
   }
 }
