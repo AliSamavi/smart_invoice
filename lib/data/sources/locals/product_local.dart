@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:smart_invoice/data/models/product/product_model.dart';
 
@@ -8,10 +9,20 @@ abstract class ProductLocal {
   Future<void> deleteProduct(int key);
 }
 
-class ProductLocalImpl implements ProductLocal {
-  final Box<ProductModel> _hiveBox;
+class ProductLocalImpl extends GetxController implements ProductLocal {
+  late Box<ProductModel> _hiveBox;
 
-  ProductLocalImpl(Box<ProductModel> hiveBox) : _hiveBox = hiveBox;
+  @override
+  void onInit() async {
+    _hiveBox = await Hive.openBox<ProductModel>("products");
+    super.onInit();
+  }
+
+  @override
+  void onClose() async {
+    await _hiveBox.close();
+    super.onClose();
+  }
 
   @override
   Future<List<ProductModel>> getProducts() async {
