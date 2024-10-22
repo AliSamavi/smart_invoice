@@ -6,6 +6,7 @@ import 'package:smart_invoice/domain/usecases/products/add_product.dart';
 import 'package:smart_invoice/domain/usecases/products/delete_product.dart';
 import 'package:smart_invoice/domain/usecases/products/edit_product.dart';
 import 'package:smart_invoice/domain/usecases/products/get_products.dart';
+import 'package:smart_invoice/presentation/controllers/products_controller.dart';
 
 class ProductsBinding extends Bindings {
   @override
@@ -31,6 +32,16 @@ class ProductsBinding extends Bindings {
     );
     Get.lazyPut<DeleteProduct>(
       () => DeleteProduct(Get.find<ProductsRepository>()),
+      fenix: true,
+    );
+
+    Get.lazyPut(
+      () => ProductsController(
+        Get.find<GetProducts>(),
+        Get.find<AddProduct>(),
+        Get.find<EditProduct>(),
+        Get.find<DeleteProduct>(),
+      ),
       fenix: true,
     );
   }
