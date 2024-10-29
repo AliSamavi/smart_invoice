@@ -5,10 +5,12 @@ import 'package:smart_invoice/config/localization.dart';
 import 'package:smart_invoice/config/routes.dart';
 import 'package:smart_invoice/config/themes.dart';
 import 'package:smart_invoice/data/models/product/product_model.dart';
+import 'package:smart_invoice/data/models/settings/settings_model.dart';
 
 void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(ProductModelAdapter());
+  Hive.registerAdapter(SettingsModelAdapter());
   runApp(const MainApp());
 }
 
