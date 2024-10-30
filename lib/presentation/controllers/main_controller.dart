@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smart_invoice/presentation/bindings/products_binding.dart';
+import 'package:smart_invoice/presentation/bindings/settings_binding.dart';
 import 'package:smart_invoice/presentation/pages/customers_page.dart';
 import 'package:smart_invoice/presentation/pages/invoices_page.dart';
 import 'package:smart_invoice/presentation/pages/products_page.dart';
@@ -12,7 +13,7 @@ class MainController extends GetxController {
     {"page": const InvoicesPage(), "binding": null},
     {"page": const CustomersPage(), "binding": null},
     {"page": const ProductsPage(), "binding": ProductsBinding()},
-    {"page": const SettingsPage(), "binding": null},
+    {"page": const SettingsPage(), "binding": SettingsBinding()},
   ];
 
   int get selectedIndex => _selectedIndex.value;
