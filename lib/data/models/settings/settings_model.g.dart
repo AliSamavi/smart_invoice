@@ -17,13 +17,13 @@ class SettingsModelAdapter extends TypeAdapter<SettingsModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return SettingsModel(
-      name: fields[0] as String,
-      province: fields[1] as String,
-      city: fields[2] as String,
-      address: fields[3] as String,
-      phoneNum: fields[4] as int,
-      postalCode: fields[5] as int,
-      economicNum: fields[6] as int,
+      name: fields[0] as String?,
+      province: fields[1] as String?,
+      city: fields[2] as String?,
+      address: fields[3] as String?,
+      phoneNum: fields[4] as int?,
+      postalCode: fields[5] as int?,
+      economicNum: fields[6] as int?,
     );
   }
 

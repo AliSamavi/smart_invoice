@@ -5,27 +5,27 @@ part 'settings_model.g.dart';
 @HiveType(typeId: 1)
 class SettingsModel {
   @HiveField(0)
-  final String name;
+  final String? name;
   @HiveField(1)
-  final String province;
+  final String? province;
   @HiveField(2)
-  final String city;
+  final String? city;
   @HiveField(3)
-  final String address;
+  final String? address;
   @HiveField(4)
-  final int phoneNum;
+  final int? phoneNum;
   @HiveField(5)
-  final int postalCode;
+  final int? postalCode;
   @HiveField(6)
-  final int economicNum;
+  final int? economicNum;
 
   SettingsModel({
-    required this.name,
-    required this.province,
-    required this.city,
-    required this.address,
-    required this.phoneNum,
-    required this.postalCode,
-    required this.economicNum,
+    this.name,
+    this.province,
+    this.city,
+    this.address,
+    this.phoneNum,
+    this.postalCode,
+    this.economicNum,
   });
 }
