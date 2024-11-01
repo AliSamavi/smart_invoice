@@ -18,6 +18,14 @@ class SettingsModel {
   final int? postalCode;
   @HiveField(6)
   final int? economicNum;
+  @HiveField(7)
+  final int? registrationNum;
+  @HiveField(8)
+  final int? nationalNum;
+  @HiveField(9)
+  final String? stamp;
+  @HiveField(10)
+  final String? signature;
 
   SettingsModel({
     this.name,
@@ -27,5 +35,9 @@ class SettingsModel {
     this.phoneNum,
     this.postalCode,
     this.economicNum,
+    this.registrationNum,
+    this.nationalNum,
+    this.stamp,
+    this.signature,
   });
 }

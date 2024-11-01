@@ -6,6 +6,10 @@ class Settings {
   final int? phoneNum;
   final int? postalCode;
   final int? economicNum;
+  final int? registrationNum;
+  final int? nationalNum;
+  final String? stamp;
+  final String? signature;
 
   Settings({
     this.name,
@@ -15,5 +19,9 @@ class Settings {
     this.phoneNum,
     this.postalCode,
     this.economicNum,
+    this.registrationNum,
+    this.nationalNum,
+    this.stamp,
+    this.signature,
   });
 }

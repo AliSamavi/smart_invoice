@@ -26,6 +26,10 @@ class SettingsRepositoryImpl implements SettingsRepository {
         phoneNum: settings.phoneNum,
         postalCode: settings.postalCode,
         economicNum: settings.economicNum,
+        registrationNum: settings.registrationNum,
+        nationalNum: settings.nationalNum,
+        stamp: settings.stamp,
+        signature: settings.signature,
       ));
     } catch (e) {
       return Left(DatabaseFailure("Failed to load settings"));
@@ -43,6 +47,10 @@ class SettingsRepositoryImpl implements SettingsRepository {
         phoneNum: settings.phoneNum,
         postalCode: settings.postalCode,
         economicNum: settings.economicNum,
+        registrationNum: settings.registrationNum,
+        nationalNum: settings.nationalNum,
+        stamp: settings.stamp,
+        signature: settings.signature,
       ));
       return const Right(null);
     } catch (e) {
