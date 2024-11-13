@@ -21,12 +21,6 @@ class SettingsLocalImpl extends GetxController implements SettingsLocal {
   }
 
   @override
-  void onClose() async {
-    await _hiveBox.close();
-    super.onClose();
-  }
-
-  @override
   Future<SettingsModel?> getSettings() async {
     await _completer.future;
     return _hiveBox.values.firstOrNull;
@@ -35,6 +29,10 @@ class SettingsLocalImpl extends GetxController implements SettingsLocal {
   @override
   Future<void> editSettings(SettingsModel settings) async {
     await _completer.future;
-    await _hiveBox.put(0, settings);
+    try {
+      await _hiveBox.put(0, settings);
+    } catch (e) {
+      await _hiveBox.add(settings);
+    }
   }
 }
