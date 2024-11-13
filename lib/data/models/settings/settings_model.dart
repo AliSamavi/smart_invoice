@@ -13,15 +13,15 @@ class SettingsModel {
   @HiveField(3)
   final String? address;
   @HiveField(4)
-  final int? phoneNum;
+  final String? phoneNum;
   @HiveField(5)
-  final int? postalCode;
+  final String? postalCode;
   @HiveField(6)
-  final int? economicNum;
+  final String? economicNum;
   @HiveField(7)
-  final int? registrationNum;
+  final String? registrationNum;
   @HiveField(8)
-  final int? nationalNum;
+  final String? nationalNum;
   @HiveField(9)
   final String? stamp;
   @HiveField(10)

@@ -3,11 +3,11 @@ class Settings {
   final String? province;
   final String? city;
   final String? address;
-  final int? phoneNum;
-  final int? postalCode;
-  final int? economicNum;
-  final int? registrationNum;
-  final int? nationalNum;
+  final String? phoneNum;
+  final String? postalCode;
+  final String? economicNum;
+  final String? registrationNum;
+  final String? nationalNum;
   final String? stamp;
   final String? signature;
 
