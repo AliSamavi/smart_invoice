@@ -215,7 +215,7 @@ class ProfileForm extends StatelessWidget {
           ),
           8.heightGap,
           Text(
-            "با خالی گذاشتن فیلد های زیر آن فیلد در فاکتور نمایش داده نمیشود.",
+            "با خالی گذاشتن فیلد های زیر، آن فیلد در فاکتور نمایش داده نمیشود.",
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.w600,
