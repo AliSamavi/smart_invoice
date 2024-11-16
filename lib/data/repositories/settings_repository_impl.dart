@@ -30,6 +30,7 @@ class SettingsRepositoryImpl implements SettingsRepository {
         nationalNum: settings.nationalNum,
         stamp: settings.stamp,
         signature: settings.signature,
+        logo: settings.logo,
       ));
     } catch (e) {
       return Left(DatabaseFailure("Failed to load settings"));
@@ -51,6 +52,7 @@ class SettingsRepositoryImpl implements SettingsRepository {
         nationalNum: settings.nationalNum,
         stamp: settings.stamp,
         signature: settings.signature,
+        logo: settings.logo,
       ));
       return const Right(null);
     } catch (e) {

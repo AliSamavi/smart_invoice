@@ -26,6 +26,8 @@ class SettingsModel {
   final String? stamp;
   @HiveField(10)
   final String? signature;
+  @HiveField(11)
+  final String? logo;
 
   SettingsModel({
     this.name,
@@ -39,5 +41,6 @@ class SettingsModel {
     this.nationalNum,
     this.stamp,
     this.signature,
+    this.logo,
   });
 }

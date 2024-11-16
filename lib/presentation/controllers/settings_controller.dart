@@ -57,6 +57,7 @@ class SettingsController extends GetxController {
 
         signature(settings.signature);
         stamp(settings.stamp);
+        logo(settings.logo);
       },
     );
     super.onInit();
@@ -82,6 +83,7 @@ class SettingsController extends GetxController {
             nationalNum.text.isEmpty ? _settings.nationalNum : nationalNum.text,
         signature: signature.value,
         stamp: stamp.value,
+        logo: logo.value,
       ),
     );
     editResult.fold(

@@ -10,6 +10,7 @@ class Settings {
   final String? nationalNum;
   final String? stamp;
   final String? signature;
+  final String? logo;
 
   Settings({
     this.name,
@@ -23,5 +24,6 @@ class Settings {
     this.nationalNum,
     this.stamp,
     this.signature,
+    this.logo,
   });
 }
