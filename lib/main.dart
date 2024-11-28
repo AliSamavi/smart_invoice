@@ -11,7 +11,7 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(ProductModelAdapter());
   Hive.registerAdapter(SettingsModelAdapter());
-  await Hive.openBox("");
+  await Hive.openBox<SettingsModel>("settings");
   runApp(const MainApp());
 }
 
@@ -26,7 +26,9 @@ class MainApp extends StatelessWidget {
       locale: Localization.locale,
       localizationsDelegates: Localization.delegates,
       getPages: Routes.pages,
-      initialRoute: Hive.box("").get(0) == null ? Routes.settings : Routes.main,
+      initialRoute: Hive.box<SettingsModel>("settings").isEmpty
+          ? Routes.settings
+          : Routes.main,
     );
   }
 }

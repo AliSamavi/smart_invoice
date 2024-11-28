@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
+import 'package:smart_invoice/data/models/settings/settings_model.dart';
 import 'package:smart_invoice/data/repositories/settings_repository_impl.dart';
 import 'package:smart_invoice/data/sources/locals/settings_local.dart';
 import 'package:smart_invoice/domain/repositories/settings_repository.dart';
@@ -9,7 +11,8 @@ import 'package:smart_invoice/presentation/controllers/settings_controller.dart'
 class SettingsBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put<SettingsLocal>(SettingsLocalImpl());
+    Get.put<SettingsLocal>(
+        SettingsLocalImpl(Hive.box<SettingsModel>("settings")));
 
     Get.lazyPut<SettingsRepository>(
       () => SettingsRepositoryImpl(Get.find<SettingsLocal>()),

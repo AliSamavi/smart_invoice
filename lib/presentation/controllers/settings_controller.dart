@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:smart_invoice/config/routes.dart';
+import 'package:smart_invoice/data/models/settings/settings_model.dart';
 import 'package:smart_invoice/domain/entities/settings.dart';
 import 'package:smart_invoice/domain/usecases/settings/edit_settings.dart';
 import 'package:smart_invoice/domain/usecases/settings/get_settings.dart';
@@ -35,7 +36,7 @@ class SettingsController extends GetxController {
   RxnString stamp = RxnString();
   RxnString logo = RxnString();
 
-  bool get authChack => Hive.box("").get(0) == null;
+  bool get authChack => Hive.box<SettingsModel>("settings").isEmpty;
 
   @override
   void onInit() async {
