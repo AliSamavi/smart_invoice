@@ -10,6 +10,16 @@ class ProductModel extends HiveObject {
   final String name;
   @HiveField(2)
   final int price;
+  @HiveField(3)
+  final int discount;
+  @HiveField(4)
+  final int tax;
 
-  ProductModel({required this.id, required this.name, required this.price});
+  ProductModel({
+    required this.id,
+    required this.name,
+    required this.price,
+    required this.discount,
+    required this.tax,
+  });
 }

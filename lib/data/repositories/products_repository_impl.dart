@@ -20,7 +20,9 @@ class ProductsRepositoryImpl implements ProductsRepository {
             key: product.key,
             id: product.id,
             name: product.name,
-            price: product.price);
+            price: product.price,
+            discount: product.discount,
+            tax: product.tax);
       }).toList());
     } catch (e) {
       return Left(DatabaseFailure("Failed to load products"));
@@ -31,7 +33,13 @@ class ProductsRepositoryImpl implements ProductsRepository {
   Future<Either<Failure, void>> addProduct(Product product) async {
     try {
       product.key = await _local.addProduct(
-        ProductModel(id: product.id, name: product.name, price: product.price),
+        ProductModel(
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          discount: product.discount,
+          tax: product.tax,
+        ),
       );
       return const Right(null);
     } catch (e) {
@@ -44,7 +52,13 @@ class ProductsRepositoryImpl implements ProductsRepository {
     try {
       await _local.editProduct(
         product.key!,
-        ProductModel(id: product.id, name: product.name, price: product.price),
+        ProductModel(
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          discount: product.discount,
+          tax: product.tax,
+        ),
       );
       return const Right(null);
     } catch (e) {
