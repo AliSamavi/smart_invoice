@@ -16,7 +16,7 @@ class SettingsPage extends GetView<SettingsController> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "تنظیمات فاکتور",
+          "تنظیمات",
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,

@@ -10,9 +10,10 @@ class MainPage extends GetView<MainController> {
     return Scaffold(
       bottomNavigationBar: Obx(
         () => NavigationBar(
-          height: 65,
-          backgroundColor: Colors.grey.withOpacity(0.05),
+          height: 60,
+          backgroundColor: Colors.white.withOpacity(0.05),
           overlayColor: const WidgetStatePropertyAll(Color(0xAABBDEFB)),
+          labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
           indicatorColor: const Color(0xFFBBDEFB),
           selectedIndex: controller.selectedIndex,
           onDestinationSelected: controller.onSelected,
