@@ -24,8 +24,17 @@ class ProductsController extends GetxController {
     _deleteProduct = deleteProduct;
   }
 
-  final Rxn<List<Product>> _products = Rxn<List<Product>>();
-  List<Product>? get products => _products.value;
+  final _isLoading = true.obs;
+  bool get isLoading => _isLoading.value;
+
+  final _products = RxList<Product>();
+  List<Product> get products => _products;
+  void insertProduct(int index, Product product) =>
+      _products.insert(index, product);
+
+  final _editingProduct = Rxn<Product>();
+  Product? get editingProduct => _editingProduct.value;
+  set editingProduct(Product? product) => _editingProduct.value = product;
 
   @override
   void onInit() async {
@@ -37,7 +46,10 @@ class ProductsController extends GetxController {
     final getResult = await _getProducts();
     getResult.fold(
       (failure) => debugPrint(failure.message),
-      (products) => _products(products),
+      (products) {
+        _products.assignAll(products);
+        _isLoading(false);
+      },
     );
   }
 
@@ -46,7 +58,7 @@ class ProductsController extends GetxController {
     addResult.fold(
       (failure) => debugPrint(failure.message),
       (_) {
-        _products.value!.add(product);
+        _products.add(product);
         debugPrint("added successfully");
       },
     );
@@ -67,7 +79,7 @@ class ProductsController extends GetxController {
     deleteResult.fold(
       (failure) => debugPrint(failure.message),
       (_) {
-        _products.value!.remove(product);
+        _products.remove(product);
         debugPrint("deleted successfully");
       },
     );
